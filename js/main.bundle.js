@@ -99,46 +99,6 @@ var enablePassiveEventListeners = exports.enablePassiveEventListeners = function
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var pug = __webpack_require__(185);
-
-function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;var locals_for_with = (locals || {});(function (modal, modal_overlay) {pug_html = pug_html + "\u003Cdiv" + (pug.attr("class", pug.classes([`${modal_overlay} js-modal-overlay`], [true]), false, true)) + "\u003E\u003Cdiv" + (pug.attr("class", pug.classes([`${modal} js-modal`], [true]), false, true)) + "\u003E\u003Cp\u003Emodal contents\u003C\u002Fp\u003E\u003Cbutton class=\"js-modal-close\"\u003ECLOSE\u003C\u002Fbutton\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";}.call(this,"modal" in locals_for_with?locals_for_with.modal:typeof modal!=="undefined"?modal:undefined,"modal_overlay" in locals_for_with?locals_for_with.modal_overlay:typeof modal_overlay!=="undefined"?modal_overlay:undefined));;return pug_html;};
-module.exports = template;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(187);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(189)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./modal.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./modal.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
@@ -564,6 +524,46 @@ $jscomp.polyfill = function (e, r, p, m) {
   };return q;
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(184)))
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pug = __webpack_require__(185);
+
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;var locals_for_with = (locals || {});(function (modal, modal_overlay) {pug_html = pug_html + "\u003Cdiv" + (pug.attr("class", pug.classes([`${modal_overlay} js-modal-overlay`], [true]), false, true)) + "\u003E\u003Cdiv" + (pug.attr("class", pug.classes([`${modal} js-modal`], [true]), false, true)) + "\u003E\u003Cp\u003Emodal contents\u003C\u002Fp\u003E\u003Cbutton class=\"js-modal-close\"\u003ECLOSE\u003C\u002Fbutton\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";}.call(this,"modal" in locals_for_with?locals_for_with.modal:typeof modal!=="undefined"?modal:undefined,"modal_overlay" in locals_for_with?locals_for_with.modal_overlay:typeof modal_overlay!=="undefined"?modal_overlay:undefined));;return pug_html;};
+module.exports = template;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(187);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(189)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./modal.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./modal.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 /* 4 */
@@ -12146,17 +12146,17 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _animejs = __webpack_require__(3);
+var _animejs = __webpack_require__(1);
 
 var _animejs2 = _interopRequireDefault(_animejs);
 
 var _util = __webpack_require__(0);
 
-var _modal = __webpack_require__(1);
+var _modal = __webpack_require__(2);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _modal3 = __webpack_require__(2);
+var _modal3 = __webpack_require__(3);
 
 var _modal4 = _interopRequireDefault(_modal3);
 
@@ -13145,17 +13145,17 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _animejs = __webpack_require__(3);
+var _animejs = __webpack_require__(1);
 
 var _animejs2 = _interopRequireDefault(_animejs);
 
 var _util = __webpack_require__(0);
 
-var _modal = __webpack_require__(1);
+var _modal = __webpack_require__(2);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _modal3 = __webpack_require__(2);
+var _modal3 = __webpack_require__(3);
 
 var _modal4 = _interopRequireDefault(_modal3);
 
@@ -13283,11 +13283,11 @@ var _velocityAnimate2 = _interopRequireDefault(_velocityAnimate);
 
 var _util = __webpack_require__(0);
 
-var _modal = __webpack_require__(1);
+var _modal = __webpack_require__(2);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _modal3 = __webpack_require__(2);
+var _modal3 = __webpack_require__(3);
 
 var _modal4 = _interopRequireDefault(_modal3);
 
@@ -18170,7 +18170,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _animejs = __webpack_require__(3);
+var _animejs = __webpack_require__(1);
 
 var _animejs2 = _interopRequireDefault(_animejs);
 
