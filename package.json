@@ -7,7 +7,7 @@
     "sass": "node-sass ./src/scss -o ./public/css -w",
     "copy": "cpx \"./src/assets/**/*\" ./public -w",
     "server": "browser-sync start --server ./public",
-    "deploy": "gh-pages -b master -d public"
+    "deploy": "gh-pages -b gh-pages -d public"
   },
   "author": "kzhrk",
   "license": "MIT",
