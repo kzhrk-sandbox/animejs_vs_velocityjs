@@ -1,0 +1,82 @@
+doctype
+html
+	head
+		title anime.js vs velocity.js
+		script(src="/js/main.bundle.js")
+		link(rel="stylesheet" href="/css/main.css")
+	body
+		.container-fluid.page-header
+			.row
+				.col-lg-12
+					h1 anime.js vs velocity.js
+		.container
+			.row
+				h2 open modal
+			.row
+				.col-lg-6
+					h3 anime.js(NG)
+					p
+						button.btn.btn-primary.btn-lg#js-anime-modal-button Open
+					pre
+						code.js.
+							anime({
+								targets: this.overlay,
+								opacity: [0, 1],
+								complete: ()=>{
+									this.isOpen = true;
+									this.isAnimate = false;
+								}
+							});
+				.col-lg-6
+					h3 velocity.js
+					p
+						button.btn.btn-primary.btn-lg#js-velocity-modal-button Open
+					pre
+						code.js.
+							velocity(this.overlay, {
+								opacity: [1, 0],
+							},{
+								complete: ()=>{
+									this.isOpen = true;
+									this.isAnimate = false;
+								}
+							});
+			.row
+				.col-lg-6
+					h3 anime.js(GOOD)
+					p
+						button.btn.btn-primary.btn-lg#js-anime-modal-button2 Open
+					pre
+						code.js.
+							anime({
+								targets: this.overlay,
+								opacity: [0, 1],
+								easing: 'easeOutQuad',
+								complete: ()=>{
+									this.isOpen = true;
+									this.isAnimate = false;
+								}
+							});
+			hr
+			.row
+				h2 アンカーリンクのスクロール
+			.row
+				.col-lg-6
+					p
+						button.btn.btn-primary.btn-lg#js-scroll-button PageTop
+					pre
+						code.js.
+							const scroll = {
+								y: window.scrollY || window.pageYOffset
+							};
+
+							anime({
+								targets: scroll,
+								y: 0,
+								duration: 350,
+								easing: 'easeInOutCubic',
+								update: () => {
+									console.log(`scrollY: ${scroll.y}`);
+									window.scrollTo(0, scroll.y);
+								}
+							});

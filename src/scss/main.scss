@@ -1,0 +1,10 @@
+@import "node_modules/bootstrap/dist/css/bootstrap";
+@import "node_modules/highlight.js/styles/default";
+
+.page {
+  &-header {
+    margin-top: 0;
+    background: #6f5499;
+    color: #fff;
+  }
+}
