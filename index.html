@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head><title>anime.js vs velocity.js</title><script src="/js/main.bundle.js"></script><link rel="stylesheet" href="/css/main.css"></head><body><div class="container-fluid page-header"><div class="row"><div class="col-lg-12"><h1>anime.js vs velocity.js</h1></div></div></div><div class="container"><div class="row"><h2>open modal</h2></div><div class="row"><div class="col-lg-6"><h3>anime.js(NG)</h3><p><button class="btn btn-primary btn-lg" id="js-anime-modal-button">Open</button></p><pre><code class="js">anime({
+	targets: this.overlay,
+	opacity: [0, 1],
+	complete: ()=>{
+		this.isOpen = true;
+		this.isAnimate = false;
+	}
+});</code></pre></div><div class="col-lg-6"><h3>velocity.js</h3><p><button class="btn btn-primary btn-lg" id="js-velocity-modal-button">Open</button></p><pre><code class="js">velocity(this.overlay, {
+	opacity: [1, 0],
+},{
+	complete: ()=>{
+		this.isOpen = true;
+		this.isAnimate = false;
+	}
+});</code></pre></div></div><div class="row"><div class="col-lg-6"><h3>anime.js(GOOD)</h3><p><button class="btn btn-primary btn-lg" id="js-anime-modal-button2">Open</button></p><pre><code class="js">anime({
+	targets: this.overlay,
+	opacity: [0, 1],
+	easing: 'easeOutQuad',
+	complete: ()=>{
+		this.isOpen = true;
+		this.isAnimate = false;
+	}
+});</code></pre></div></div><hr><div class="row"><h2>アンカーリンクのスクロール</h2></div><div class="row"><div class="col-lg-6"><p><button class="btn btn-primary btn-lg" id="js-scroll-button">PageTop</button></p><pre><code class="js">const scroll = {
+	y: window.scrollY || window.pageYOffset
+};
+
+anime({
+	targets: scroll,
+	y: 0,
+	duration: 350,
+	easing: 'easeInOutCubic',
+	update: () => {
+		console.log(`scrollY: ${scroll.y}`);
+		window.scrollTo(0, scroll.y);
+	}
+});</code></pre></div></div></div></body></html>
